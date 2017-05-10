@@ -1,0 +1,60 @@
+<link href="style.css" rel="stylesheet" type="text/css">
+<html>
+	<head>
+		<title>Pesan</title>
+		<div class="wrap">
+		<div id="nav">
+			<div id="nav_wrap">
+				<ul>
+					<li><a href="home.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="stok_barang.html">Stok Barang</a></li>
+					<li><a href="harga_barang.html">Info Harga</a></li>
+					<li><a href="kontak.html">Contact</a></li>
+					<li><a href="pesan.html">Pemesanan</a></li>
+					<li><a href="logout.html">Log Out</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	</head>
+	
+	<body>
+		<div align="center" class="pesan">
+		<p align="center"><font face="harrington" size="4" color="black"><b>Silahkan Daftarkan Diri Anda</b></font></p>
+
+			<form action="insert2.php" method="post">
+			<font face='Goudy Old Style' size='4' color='black'>
+				<b>
+				Nama
+				<br>
+				<input type="text" name="nama">
+				<br>
+				
+				No HP
+				<br>
+				<input type="number" name="no_hp">
+				<br>
+
+				Alamat
+				<br>
+				<textarea name="alamat"></textarea>
+				<br>
+				
+				Tanggal Pemesanan
+				<br>
+				<input type="date" name="tgl_pemesanan">
+				<br>
+
+				<td>
+				<input type="submit" value="Submit">
+				<input type="reset" value="Cancel">
+				</td>
+				<br>
+				</b>
+			</font>
+			</form>
+		
+		</div>
+	</body>
+</html>
