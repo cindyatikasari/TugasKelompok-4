@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<title>Harga Barang</title>
+	</head>
+	
+	<body>
+<?php
+	//mulai proses edit data
+	if(isset($_POST['simpan'])){
+ 
+ 		//koneksi ke dalam database
+ 		include('koneksi.php');
+ 
+ 		//jika tombol edit benar di klik maka lanjut prosesnya
+ 		$id_barang   = $_POST['id_barang']; 
+ 		$nama_barang  = $_POST['nama_barang'];
+ 		$harga_sebelumnya = $_POST['harga_sebelumnya'];  
+ 		$harga_sekarang  = $_POST['harga_sekarang']; 
+ 
+ 		//melakukan query dengan perintah update 
+ 		$update = mysql_query("UPDATE barang SET id_barang='$id_barang', nama_barang='$nama_barang', harga_sebelumnya='$harga_sebelumnya', harga_sekarang='$harga_sekarang' WHERE id_barang='$id_barang'") or die(mysql_error());
+ 		
+ 			//jika query sukses
+ 			if($update){
+  
+  			echo 'Data Berhasil Di Simpan! ';
+  			echo 'Proses Update Telah Berhasil! ';
+  			echo '<a href="edit.php?id='.$id.'">Kembali</a>'; //membuat Link untuk kembali ke halaman edit
+  
+ 			} else{
+  
+  			echo 'Gagal menyimpan data! ';
+  			echo 'Proses Update Tidak Berhasil! ';
+  			echo '<a href="edit.php?id='.$id.'">Kembali</a>'; //membuat Link untuk kembali ke halaman edit
+  			}
+
+	} else //jika tidak terdeteksi tombol simpan di klik
+	echo '<script>window.history.back()</script>';
+
+?>
+
+		Id Barang :<?php echo $_POST['id_barang']; ?><br/>
+		Nama Barang :<?php echo $_POST['nama_barang']; ?><br/>
+		Harga Sebelumnya :<?php echo $_POST['harga_sebelumnya']; ?><br/>
+		Harga Sekarang :<?php echo $_POST['harga_sekarang']; ?><br/>
+
+	</body>
+	<a href = "harga_barang.html"><button type="button">View Data</button></a>
+</html>
