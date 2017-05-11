@@ -11,9 +11,9 @@
 	<input type="text" Name="nama" size="20" placeholder="Nama Depan">
 	<input type="text" Name="nama" size="20" placeholder="Nama Belakang"><br><br>
 	<input type="text" Name="email" size="46" placeholder="Email Anda"><br><br>
-	<input type="text" Name="sandi" size="46" placeholder="Kata Sandi"><br><br>
+	<input type="password" Name="sandi" size="46" placeholder="Kata Sandi"><br><br>
 	<input type="password" Name="sandi" size="46" placeholder="Masukan Ulang Kata Sandi"><br><br>
-	<input type="number" Name="NoHp" size="15" placeholder="Masukkan No.Hp Anda"><br>
+	<input type="text" Name="NoHp" size="15" placeholder="Masukkan No.Hp Anda"><br>
 	
 	<p><b>Tanggal Lahir</b></p>
 	<select name="Tanggal">
