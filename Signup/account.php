@@ -118,7 +118,7 @@
      <option>Mata ie</option>
      <option>Lambaro</option>
      <option>Ajuen</option>
-     <option>Kampong Baroe</option>
+     <option>Gampong Baroe</option>
      <option>Ule Kareng</option>
 	 </select>
   
