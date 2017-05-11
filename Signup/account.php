@@ -109,7 +109,7 @@
 	
    <p><b> Lokasi Pasar </b></p>
      <select>
-     <option>Select Pasar...</option>
+     <option>--Select Pasar--</option>
      <option>Peunayong</option>
      <option>Rukoh</option>
      <option>Peuniti</option>
@@ -120,15 +120,14 @@
      <option>Ajuen</option>
      <option>Kampong Baroe</option>
      <option>Ule Kareng</option>
-     <option>---SELECT---</option>
 	 </select>
   
    <p><b> Status </b></p>
 	 <select>
+     <option>--Select Status--</option>
      <option>Pedagang</option>
      <option>Pelanggan</option>
      <option>Kuli Antar</option>
-     <option>---SELECT---</option>
 	 </select>
 	 
     <br><br><br>
