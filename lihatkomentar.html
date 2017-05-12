@@ -1,0 +1,27 @@
+<html>
+		<table>
+		
+		<?php
+		require_once "koneksi.php";
+		
+		$sql="select * from komentar"; 
+		$result=$koneksi->query($sql);
+			echo'	
+				<tr>
+					<th>komentar</th>
+				</tr>';
+		
+		while($row = $result->fetch_assoc()){
+			
+			echo'
+				<tr>
+					<td align=center>'.$row["komentar"].'</td>
+					
+				</tr>
+		
+			';
+		}
+		?>
+		</table>
+		
+</html>
