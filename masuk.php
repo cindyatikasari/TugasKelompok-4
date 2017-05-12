@@ -15,14 +15,9 @@
 			// Variabel username dan password
 			$username=$_POST['username'];
 			$password=$_POST['password'];
-			// Mencegah MySQL injection 
-			$username = stripslashes($username);
-			$password = stripslashes($password);
-			$username = mysql_real_escape_string($username);
-			$password = mysql_real_escape_string($password);
 			// SQL query untuk memeriksa apakah user terdapat di database?
-			$query = mysql_query("select * from user where username='$username' AND password='".md5($password)."'", $connection);
-			$rows = mysql_num_rows($query);
+			$sql = "select * from user where username='$username' AND password='$password'";
+			$rows = $conn->query($sql);
 			if ($rows == 1) {
 				$_SESSION['user']=$username; // Membuat Sesi/session
 				header("location: home.php"); // Mengarahkan ke halaman profil
@@ -39,7 +34,7 @@
 <html >
   <head>
     <meta charset="UTF-8">
-    <title> login </title>    
+    <title>login </title>    
     <link rel="stylesheet" href="assets/css/form-style.css">
   </head>
 
