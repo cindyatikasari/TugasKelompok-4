@@ -16,7 +16,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-pencil"></i> Profil Pelanggan</a></li>
+                <li><a href="profil_pelanggan.php"><i class="fa fa-pencil"></i> Profil Pelanggan</a></li>
                 <li><a href="#"><i class="fa fa-list"></i> List Pelanggan</a></li>
               </ul>
             </li>
