@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2017 at 07:00 AM
+-- Generation Time: May 12, 2017 at 03:55 AM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 7.0.2
 
@@ -19,6 +19,31 @@ SET time_zone = "+00:00";
 --
 -- Database: `5-in-1-delivery`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `barang`
+--
+
+CREATE TABLE `barang` (
+  `id_barang` varchar(20) NOT NULL,
+  `nama_barang` varchar(30) NOT NULL,
+  `harga_jual` varchar(30) NOT NULL,
+  `harga_beli` varchar(30) NOT NULL,
+  `stock` varchar(20) NOT NULL,
+  `suplier` varchar(30) NOT NULL,
+  `keterangan` varchar(30) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `barang`
+--
+
+INSERT INTO `barang` (`id_barang`, `nama_barang`, `harga_jual`, `harga_beli`, `stock`, `suplier`, `keterangan`) VALUES
+('stock1', 'Anggur', '20.000/kg', '25.000/kg', '3 kg', 'Agen', 'Tersedia'),
+('stock2', 'Ikan Kakap', '20.000/kg', '27.000/kg', '10 kg', 'Agen', 'Tersedia'),
+('stock3', 'Wartel', '5.000/kg', '8.000/kg', 'Kosong', 'Agen', 'Habis');
 
 -- --------------------------------------------------------
 
@@ -48,19 +73,6 @@ CREATE TABLE `pelanggan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `profil_barang`
---
-
-CREATE TABLE `profil_barang` (
-  `id_barang` varchar(10) NOT NULL,
-  `nama_barang` varchar(25) NOT NULL,
-  `harga_sebelumnya` float NOT NULL,
-  `harga_sekarang` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `user`
 --
 
@@ -81,6 +93,12 @@ CREATE TABLE `user` (
 --
 
 --
+-- Indexes for table `barang`
+--
+ALTER TABLE `barang`
+  ADD PRIMARY KEY (`id_barang`);
+
+--
 -- Indexes for table `komentar`
 --
 ALTER TABLE `komentar`
@@ -91,12 +109,6 @@ ALTER TABLE `komentar`
 --
 ALTER TABLE `pelanggan`
   ADD PRIMARY KEY (`no_hp`);
-
---
--- Indexes for table `profil_barang`
---
-ALTER TABLE `profil_barang`
-  ADD PRIMARY KEY (`id_barang`);
 
 --
 -- Indexes for table `user`
