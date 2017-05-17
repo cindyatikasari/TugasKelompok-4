@@ -8,8 +8,6 @@
 	
 	$query = "INSERT INTO komentar (email, nama_barang, komentar) VALUES ('$email', '$nama_barang', '$komentar');";
 	$rows = $koneksi->query($query);
-	if ($rows >= 1) {
-			$error="Username telah terdaftar";
-	}
+
 	header("location: about.html");
 ?>
