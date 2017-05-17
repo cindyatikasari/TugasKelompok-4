@@ -10,4 +10,8 @@
 	$rows = $koneksi->query($query);
 
 	header("location: about.html");
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> 125af962cb23d7b39777ccd32bf0b43ed841a27b
