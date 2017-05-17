@@ -11,5 +11,5 @@
 	if ($rows >= 1) {
 			$error="Username telah terdaftar";
 	}
-	header("location: tes.php");
+	header("location: about.html");
 ?>
