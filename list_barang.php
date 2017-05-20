@@ -53,7 +53,7 @@ echo "
 </script>
 <script language="JavaScript" type="text/javascript">
 function checkDelete(){
-    return confirm('Yakin datanya mau dihapus om ?');
+    return confirm('Yakin datanya mau dihapus?');
 }
 </script>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

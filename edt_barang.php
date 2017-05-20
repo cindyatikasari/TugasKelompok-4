@@ -105,25 +105,25 @@
                           <div class="form-group">
                               <label for="tiga" class="col-sm-2 control-label">Harga Jual</label>
                               <div class="col-sm-10">
-                                  <input type="text"  name="hargajual" class="form-control"  placeholder="Harga Jual" value="<?php echo $row[3];?>">
+                                  <input type="text"  name="hargajualawal" class="form-control"  placeholder="Harga Jual" value="<?php echo $row[3];?>">
                               </div>
                           </div>
                           <div class="form-group">
                               <label for="tiga" class="col-sm-2 control-label">Stock</label>
                               <div class="col-sm-10">
-                                  <input type="text" name="stock" class="form-control"  placeholder="Stock" value="<?php echo $row[4];?>">
+                                  <input type="text" name="stock" class="form-control"  placeholder="Stock" value="<?php echo $row[5];?>">
                               </div>
                           </div>
                           <div class="form-group">
                               <label for="tiga" class="col-sm-2 control-label">Suplier</label>
                               <div class="col-sm-10">
-                                  <input type="text" name="suplier" class="form-control"  placeholder="Suplier" value="<?php echo $row[5];?>">
+                                  <input type="text" name="suplier" class="form-control"  placeholder="Suplier" value="<?php echo $row[6];?>">
                               </div>
                           </div>
                           <div class="form-group">
                               <label for="tiga" class="col-sm-2 control-label">Keterangan</label>
                               <div class="col-sm-10">
-                                  <input type="text" name="keterangan" class="form-control"  placeholder="Keterangan" value="<?php echo $row[6];?>">
+                                  <input type="text" name="keterangan" class="form-control"  placeholder="Keterangan" value="<?php echo $row[7];?>">
                               </div>
                           </div>
                       </div>
@@ -184,7 +184,7 @@ if (isset($_POST['submit'])) {
   $sup=$_POST['suplier'];
   $ket=$_POST['keterangan'];
 
-  $ogve="update barang set nama_barang='$nb', harga_jual='$hj',harga_beli='$hb',stock='$stc',suplier='$sup',keterangan='$ket'  where id_barang='$idb' ";
+  $ogve="update barang set nama_barang='$nb', harga_jual='$hj', harga_beli='$hb',stock='$stc',suplier='$sup',keterangan='$ket'  where id_barang='$idb' ";
   if (mysqli_query($db,$ogve)) {
     ?>
     <script language="javascript">
