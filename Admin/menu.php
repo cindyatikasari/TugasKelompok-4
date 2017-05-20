@@ -1,7 +1,7 @@
 <aside class="main-sidebar">
         <section class="sidebar">
           <ul class="sidebar-menu">
-            <li class="header">Main Menu</li>
+            <li class="header">Menu</li>
       <li class="treeview">
               <a href="#">
                 <i class="fa fa-cubes"></i><span>Stock Barang</span>
@@ -16,7 +16,15 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-pencil"></i> Profil Pelanggan</a></li>
+                <li><a href="index.php?page=profil_pelanggan"><i class="fa fa-pencil"></i> Profil Pelanggan</a></li>
+                <li><a href="index.php?page=list_pelanggan"><i class="fa fa-list"></i> List Pelanggan</a></li>
+              </ul>
+              <a href="#">
+                <i class="fa fa-cubes"></i><span>Pembatalan</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="index.php?page=list_batal"><i class="fa fa-pencil"></i> Alasan Pembatalan</a></li>
                 <li><a href="#"><i class="fa fa-list"></i> List Pelanggan</a></li>
               </ul>
             </li>
