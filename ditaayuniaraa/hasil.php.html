@@ -1,0 +1,60 @@
+<?php
+
+	require_once "database.php";//untuk menghubungkan/koneksi dengan database
+
+	if (isset($_POST['id_barang']))
+	{
+	$id_barang = $_POST['id_barang'];
+	$nama_barang = $_POST['nama_barang'];
+	$stok_barang = $_POST['harga_jual'];
+	$keterangan = $_POST['jumlah'];
+
+	$sql = "INSERT into barang VALUES('$id_barang','$nama_barang','$harga_jual','$jumlah')";//tampung variabel
+
+	$result = $conn->query($sql);//untuk menjalankan sql diatas
+
+	if($result)
+	{
+		echo "Data Berhasil Ditambahkan";
+	} 
+
+	else
+	{
+		echo "Gagal Menambahkan";
+	}
+	}
+
+     echo "<br><br>Daftar barang dan jumlah barang <br><br>";
+
+     $sqli = "SELECT * FROM barang";
+     $result = $conn->query($sqli);
+    
+     if($result->num_rows>0){
+
+   	echo'
+	<table style="border: 1px solid">
+		<tr>
+			<th style="border: 1px solid">ID Barang</th>
+			<th style="border: 1px solid">Nama Barang</th>
+			<th style="border: 1px solid">Harga Jual</th>
+			<th style="border: 1px solid">Jumlah</th>
+			<th style="border: 1px solid">Keterangan</th>
+		</tr>
+		';
+		while($row = $result->fetch_assoc())
+		{
+			echo'
+			<tr>
+			<td style="border: 1px solid">'.$row["id_barang"].'</td>
+			<td style="border: 1px solid">'.$row["nama_barang"].'</td>
+			<td style="border: 1px solid">'.$row["harga_jual"].'</td>
+			<td style="border: 1px solid">'.$row["jumlah"].'</td>
+			<td style="border: 1px solid"><a href="edit.php?id_barang='.$row["id_barang"].'">EDIT</a> | <a href="hapus.php?id_barang='.$row["id_barang"].'">DELETE</a></td>
+			</tr>
+		';
+		}
+		echo '</table>';
+	}
+
+?>
+<center><a href="masuk-barang.php">&Lt; Masukkan Barang Baru</a></center>
