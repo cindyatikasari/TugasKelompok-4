@@ -1,21 +1,50 @@
-<?php
-	include "koneksi.php";
+<?php 
 
-	/* simpan ke database */
-	$nama_depan  = $_POST['nama_depan'];
-	$nama_belakang  = $_POST['nama_belakang'];
-	$email  = $_POST['email'];
-	$password  = $_POST['password'];
-	$no_hp  = $_POST['no_hp'];
-	$tgl_lahir  = $_POST['tgl_lahir'];
-	$gender  = $_POST['gender'];
-	$lokasi_pasar  = $_POST['lokasi_pasar'];
-	$status  = $_POST['status'];
-	
-	$query = "INSERT INTO user (nama_depan, nama_belakang, email, password, no_hp, tgl_lahir, gender, lokasi_pasar, status) VALUES ('$nama_depan', '$nama_belakang', '$email', '$password', '$no_hp', '$tgl_lahir', '$gender', '$lokasi_pasar', '$status');";
-	$rows = $koneksi->query($query);
-	if ($rows >= 1) {
-			$error="Username telah terdaftar";
+class Connection {
+
+	public $con;
+
+	// connection to database
+	public function __construct()
+	{
+		$this->con = new mysqli("localhost","root","","5-in-1-delivery");
 	}
-	header("location: login.php");
-?>
+
+	// try authentication user
+	public function login($username,$password)
+	{
+		$query="select *From daftar where username=? AND password=?";
+		$stmt=$this->con->prepare($query);
+		$stmt->bind_param("ss",$username,md5($password)); 
+		$stmt->execute();
+
+		if($stmt->fetch())
+		{
+			header("location: index.html");
+		}else {
+			echo"Maaf Anda Gagal Login";
+		}
+	}
+
+	public function register($username,$email,$password,$konfirmasi_password,$status)
+	{
+		if($password==$konfirmasi_password)
+		{
+			$password=md5($password);
+			
+		 	$query="INSERT INTO daftar (username,email,password,status) VALUES(?,?,?,?)";
+		 	$statement=$this->con->prepare($query);
+		 	$statement->bind_param('ssss', $username,$email,$password,$status);
+
+			if($statement->execute())
+			{
+				header("location: login.html");
+			}
+
+		}else {
+			echo 'the password mismatch';
+		}
+
+	}
+
+}
