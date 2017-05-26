@@ -5,9 +5,9 @@
 	$username = "root";
 	$password = "";
 
-	$db = new mysqli ($server, $username, $password, $database);
+	$koneksi = new mysqli ($server, $username, $password, $database);
 
-	if($db->connect_error){
+	if($koneksi->connect_error){
 		die("Koneksi gagal");
 	}
 ?>
