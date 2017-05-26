@@ -9,9 +9,5 @@
 	$query = "INSERT INTO komentar (email, nama_barang, komentar) VALUES ('$email', '$nama_barang', '$komentar');";
 	$rows = $koneksi->query($query);
 
-	header("location: about.html");
-<<<<<<< HEAD
+	header("location: about.php");
 ?>
-=======
-?>
->>>>>>> 125af962cb23d7b39777ccd32bf0b43ed841a27b

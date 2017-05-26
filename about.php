@@ -274,67 +274,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="testimonials">
 		<div class="container">
 			<h3>Testimonials</h3>
-				<div class="w3_testimonials_grids">
-					<div class="wmuSlider example1 animated wow slideInUp" data-wow-delay=".5s">
-						<div class="wmuSliderWrapper">
-							<article style="position: absolute; width: 100%; opacity: 0;"> 
-								<div class="banner-wrap">
-									<div class="col-md-6 w3_testimonials_grid">
-										<p><i class="fa fa-quote-right" aria-hidden="true"></i>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis 
-											voluptatibus maiores alias consequatur aut perferendis doloribus asperiores 
-											repellat.</p>
-										<h4>Andrew Smith <span>Customer</span></h4>
-									</div>
-									<div class="col-md-6 w3_testimonials_grid">
-										<p><i class="fa fa-quote-right" aria-hidden="true"></i>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis 
-											voluptatibus maiores alias consequatur aut perferendis doloribus asperiores 
-											repellat.</p>
-										<h4>Thomson Richard <span>Customer</span></h4>
-									</div>
-									<div class="clearfix"> </div>
-								</div>
-							</article>
-							<article style="position: absolute; width: 100%; opacity: 0;"> 
-								<div class="banner-wrap">
-									<div class="col-md-6 w3_testimonials_grid">
-										<p><i class="fa fa-quote-right" aria-hidden="true"></i>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis 
-											voluptatibus maiores alias consequatur aut perferendis doloribus asperiores 
-											repellat.</p>
-										<h4>Crisp Kale <span>Customer</span></h4>
-									</div>
-									<div class="col-md-6 w3_testimonials_grid">
-										<p><i class="fa fa-quote-right" aria-hidden="true"></i>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis 
-											voluptatibus maiores alias consequatur aut perferendis doloribus asperiores 
-											repellat.</p>
-										<h4>John Paul <span>Customer</span></h4>
-									</div>
-									<div class="clearfix"> </div>
-								</div>
-							</article>
-							<article style="position: absolute; width: 100%; opacity: 0;"> 
-								<div class="banner-wrap">
-									<div class="col-md-6 w3_testimonials_grid">
-										<p><i class="fa fa-quote-right" aria-hidden="true"></i>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis 
-											voluptatibus maiores alias consequatur aut perferendis doloribus asperiores 
-											repellat.</p>
-										<h4>Rosy Carl <span>Customer</span></h4>
-									</div>
-									<div class="col-md-6 w3_testimonials_grid">
-										<p><i class="fa fa-quote-right" aria-hidden="true"></i>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis 
-											voluptatibus maiores alias consequatur aut perferendis doloribus asperiores 
-											repellat.</p>
-										<h4>Rockson Doe <span>Customer</span></h4>
-									</div>
-									<div class="clearfix"> </div>
-								</div>
-							</article>
-						</div>
-					</div>
-					<script src="js/jquery.wmuSlider.js"></script> 
-					<script>
-						$('.example1').wmuSlider();         
-					</script> 
-				</div>
+				<head>
+						<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+						<title>Membaca Data</title>
+					</head>
+					<body>
+						<?php
+								require_once "koneksi.php";
+								
+								$sql="select * from komentar"; 
+								$result=$koneksi->query($sql);
+									
+								while($row = $result->fetch_assoc()){
+
+						echo "<br>Email : ".$row['email'];
+						echo "<br>Komentar : ".$row['komentar'];
+						echo "<hr>";
+						}
+						?>
+					</body>
 		</div>
 	</div>
 <!-- //testimonials -->
@@ -354,50 +312,52 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 
-	<head>
-	<div class="komentar" align="center"> <font color="lime">
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<title>Untitled Document</title>
+		<head>
+		<div class="komentar" align="center"> <font color="lime">
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Kolom Komentar</title>
 
-	<style type="text/css">
-	<!--
-	.style1 {
-	 font-family: Geneva, Arial, Helvetica, sans-serif;
-	 font-size: 12px;
-	 font-weight: bold;
-	}
-	-->
-	</style>
-	</font>
-	</div> 
-	</head>
-	
-	<body>
-	  <br>
-	  <form action = "insert.php" method = "post">
-	  <center><h3>SEND YOUR TESTIMONIAL'S </h3></center><br>
-	  <table width="433" border="0" align="center" cellpadding="4" cellspacing="2" >
-		<tr>
-		  <td><div align="right"><h4>Email :</h4></div></td>
-		  <td><input name="email" type="text" id="email" size="40" /></td>
-		</tr>
-		<tr>
-		  <td><div align="right"><h4>Komentar:</h4></div></td>
-		  <td><br><textarea name="komentar" placeholder="Tuliskan komentar anda" size="40" cols="40" rows="2" id="komentar"></textarea><br/></td>
-		</tr>
-		<tr>
-		  <td></td>
-		  <td><input name="kirim" type="submit" id="kirim" value="Kirim" /></td>
-		</tr>
-		<tr>
-		</tr>
-	  </table>
-	  <br />
-	</form>
-	</body>
+		<style type="text/css">
+		<!--
+		.style1 {
+		 font-family: Geneva, Arial, Helvetica, sans-serif;
+		 font-size: 12px;
+		 font-weight: bold;
+		}
+		-->
+		</style>
+		</font>
+		</div> 
+		</head>
+		
+		<body>
+			
+		  <br>
+		  <form action = "insert.php" method = "post">
+		  <center><h3>SEND YOUR TESTIMONIAL'S </h3></center><br>
+		  <center>
+		  <table width="433" border="0" align="center" cellpadding="4" cellspacing="2" >
+			<tr>
+			  <td><div align="right"><h4>Email :</h4></div></td>
+			  <td><input name="email" type="text" id="email" size="40"></td>
+			</tr>
+			<tr>
+			  <td><div align="right"><h4>Komentar:</h4></div></td>
+			  <td><br><textarea name="komentar" placeholder="Tuliskan komentar anda" size="40" cols="40" rows="2" id="komentar"></textarea><br/></td>
+			</tr>
+			<tr>
+			  <td></td>
+			  <td><br><input name="kirim" type="submit" and type="button" id="kirim" value="Kirim" onclick="alert('Komentar anda terkirim')"/></td>
+			</tr>
+
+		  </table>
+		  </center>
+		</form>
+		</body>
+
 <!-- //newsletter -->
 <!-- footer -->
-	<div class="footer">
+	<br><div class="footer">
 		<div class="container">
 			<div class="col-md-3 w3_footer_grid">
 				<h3>information</h3>
