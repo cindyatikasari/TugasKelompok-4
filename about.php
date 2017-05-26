@@ -274,25 +274,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="testimonials">
 		<div class="container">
 			<h3>Testimonials</h3>
-				<head>
-						<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-						<title>Membaca Data</title>
-					</head>
-					<body>
-						<?php
-								require_once "koneksi.php";
-								
-								$sql="select * from komentar"; 
-								$result=$koneksi->query($sql);
-									
-								while($row = $result->fetch_assoc()){
-
-						echo "<br>Email : ".$row['email'];
-						echo "<br>Komentar : ".$row['komentar'];
-						echo "<hr>";
-						}
-						?>
-					</body>
+				
 		</div>
 	</div>
 <!-- //testimonials -->
