@@ -3,10 +3,10 @@
 
 	/* simpan ke database */
 	$email  = $_POST['email'];
-	$nama_barang  = $_POST['nama_barang'];
+	$id  = $_POST['id'];
 	$komentar  = $_POST['komentar'];
 	
-	$query = "INSERT INTO komentar (email, nama_barang, komentar) VALUES ('$email', '$nama_barang', '$komentar');";
+	$query = "INSERT INTO komentar (email, id, komentar, date) VALUES ('$email', '$id', '$komentar', '$date');";
 	$rows = $koneksi->query($query);
 
 	header("location: about.php");

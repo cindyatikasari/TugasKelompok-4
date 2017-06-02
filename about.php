@@ -226,8 +226,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<h3>Meet Our Amazing Team</h3>
 			<div class="agileits_team_grids">
 				<div class="col-md-3 agileits_team_grid">
-					<img src="images/32.jpg" alt=" " class="img-responsive" />
-					<h4>Martin Paul</h4>
+					<img src="images/.jpg" alt=" " class="img-responsive" />
+					<h4>Martin Garrix</h4>
 					<p>Manager</p>
 					<ul class="agileits_social_icons agileits_social_icons_team">
 						<li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -236,8 +236,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</ul>
 				</div>
 				<div class="col-md-3 agileits_team_grid">
-					<img src="images/33.jpg" alt=" " class="img-responsive" />
-					<h4>Michael Rick</h4>
+					<img src="images/.jpg" alt=" " class="img-responsive" />
+					<h4>Michael Carrick</h4>
 					<p>Supervisor</p>
 					<ul class="agileits_social_icons agileits_social_icons_team">
 						<li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -246,8 +246,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</ul>
 				</div>
 				<div class="col-md-3 agileits_team_grid">
-					<img src="images/34.jpg" alt=" " class="img-responsive" />
-					<h4>Thomas Carl</h4>
+					<img src="images/.jpg" alt=" " class="img-responsive" />
+					<h4>Thomas Muller</h4>
 					<p>Supervisor</p>
 					<ul class="agileits_social_icons agileits_social_icons_team">
 						<li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -256,8 +256,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</ul>
 				</div>
 				<div class="col-md-3 agileits_team_grid">
-					<img src="images/35.jpg" alt=" " class="img-responsive" />
-					<h4>Laura Lee</h4>
+					<img src="images/.jpg" alt=" " class="img-responsive" />
+					<h4>Heung Min Son</h4>
 					<p>CEO</p>
 					<ul class="agileits_social_icons agileits_social_icons_team">
 						<li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -282,13 +282,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<?php
 								require_once "koneksi.php";
 								
-								$sql="select * from komentar"; 
+								$sql="select * from komentar order by id desc"; 
+
 								$result=$koneksi->query($sql);
 									
 								while($row = $result->fetch_assoc()){
 
-						echo "<br>Email : ".$row['email'];
+						echo "<br>Email \t: ".$row['email'];
 						echo "<br>Komentar : ".$row['komentar'];
+						echo "<br>Commented on : ".$row['date'];
 						echo "<hr>";
 						}
 						?>
@@ -312,9 +314,52 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 
+		<head>
+		<div class="komentar" align="center"> <font color="lime">
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Kolom Komentar</title>
+
+		<style type="text/css">
+		<!--
+		.style1 {
+		 font-family: Geneva, Arial, Helvetica, sans-serif;
+		 font-size: 12px;
+		 font-weight: bold;
+		}
+		-->
+		</style>
+		</font>
+		</div> 
+		</head>
+		
+		<body>
+			
+		  <br>
+		  <form action = "insert.php" method = "post">
+		  <center><h3>SEND YOUR TESTIMONIAL'S </h3></center><br>
+		  <center>
+		  <table width="433" border="0" align="center" cellpadding="4" cellspacing="2" >
+			<tr>
+			  <td><div align="right"><h4>Email :</h4></div></td>
+			  <td><input name="email" type="text" id="email" size="40"></td>
+			</tr>
+			<tr>
+			  <td><div align="right"><h4>Komentar:</h4></div></td>
+			  <td><br><textarea name="komentar" placeholder="Tuliskan komentar anda" size="40" cols="40" rows="2" id="komentar"></textarea><br/></td>
+			</tr>
+			<tr>
+			  <td></td>
+			  <td><br><input name="kirim" type="submit" and type="button" id="kirim" value="Kirim" onclick="alert('Komentar anda terkirim')"/></td>
+			</tr>
+
+		  </table>
+		  </center>
+		</form>
+		</body>
+
 <!-- //newsletter -->
 <!-- footer -->
-	<div class="footer">
+	<br><div class="footer">
 		<div class="container">
 			<div class="col-md-3 w3_footer_grid">
 				<h3>information</h3>
