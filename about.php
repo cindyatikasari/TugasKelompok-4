@@ -288,9 +288,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									
 								while($row = $result->fetch_assoc()){
 
-						echo "<br>Email \t: ".$row['email'];
-						echo "<br>Komentar : ".$row['komentar'];
-						echo "<br>Commented on : ".$row['date'];
+						echo "<br>Email \t: $row[email]";
+						echo "<br>Komentar : $row[komentar]";
+						echo "<br>Commented on : $row[date]";
 						echo "<hr>";
 						}
 						?>
@@ -345,11 +345,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</tr>
 			<tr>
 			  <td><div align="right"><h4>Komentar:</h4></div></td>
-			  <td><br><textarea name="komentar" placeholder="Tuliskan komentar anda" size="40" cols="40" rows="2" id="komentar"></textarea><br/></td>
+			  <td><br><textarea name="komentar" placeholder="Tuliskan komentar anda" size="40" cols="40" rows="3" id="komentar"></textarea><br/></td>
 			</tr>
 			<tr>
 			  <td></td>
-			  <td><br><input name="kirim" type="submit" and type="button" id="kirim" value="Kirim" onclick="alert('Komentar anda terkirim')"/></td>
+			  <td><br><input name="kirim" type="submit" and id="kirim" value="Kirim" onclick="alert('Komentar anda terkirim')"/></td>
 			</tr>
 
 		  </table>
